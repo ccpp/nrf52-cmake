@@ -76,14 +76,14 @@ function(nrf52_add_sdk_startup TARGET)
     unset(NRF52_STARTUP_FILE CACHE)
     find_file(NRF52_STARTUP_FILE
         NAMES gcc_startup_nrf52${NRF52_CHIP}.S gcc_startup_nrf52.S
-        PATHS "${NRF5_SDK_PATH}/modules/nrfx/mdk"
+        PATHS "${NRF5_SDK_PATH}/modules/nrfx/mdk" "${NRF5_SDK_PATH}/components/toolchain/gcc"
         NO_DEFAULT_PATH
     )
     
     unset(NRF52_SYSTEM_FILE CACHE)
     find_file(NRF52_SYSTEM_FILE
         NAMES system_nrf52${NRF52_CHIP}.c system_nrf52.c
-        PATHS "${NRF5_SDK_PATH}/modules/nrfx/mdk"
+        PATHS "${NRF5_SDK_PATH}/modules/nrfx/mdk" "${NRF5_SDK_PATH}/components/toolchain"
         NO_DEFAULT_PATH
     )
     
